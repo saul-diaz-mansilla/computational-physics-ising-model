@@ -50,7 +50,6 @@ for H in H_val:
     M_T = []
     E_T = []
     C_N = []
-    # with pd.HDFStore(r"C:\Users\Usuario\Documents\Documentos\Universidad\Computacion_Avanzada\Tema_7\data_" + str(n_side) + "_" + str(n_steps) + "_4.h5", mode='w') as store:
     for n in range(len(T_val)):
         T = T_val[n]
         # More steps closer to T=2.2
@@ -71,7 +70,7 @@ for H in H_val:
         E_T.append(np.mean(E_samples) / n_side ** 2)
         C_N.append((np.mean(E_samples**2) - np.mean(E_samples)**2) / n_side**2 / T**2)
     
-    filename = r"C:\Users\Usuario\Documents\Documentos\Universidad\Computacion_Avanzada\Tema_7\data_3\values_" + str(H) + ".csv"
+    filename = r"data_3\values_" + str(H) + ".csv"
     np.savetxt(filename, 
             np.column_stack((T_val, M_T, E_T, C_N)),
             delimiter=',', 
@@ -83,7 +82,7 @@ for H in H_val:
     T_c1, beta1 = p_M1
     Tcs.append(T_c1)
 
-filename = r"C:\Users\Usuario\Documents\Documentos\Universidad\Computacion_Avanzada\Tema_7\data_3\H_var.csv"
+filename = r"data_3\H_var.csv"
 np.savetxt(filename, 
            np.column_stack((H_val, Tcs)),
            delimiter=',', 
@@ -101,3 +100,4 @@ fig3.grid()
 
 plt.tight_layout()
 plt.show()
+
