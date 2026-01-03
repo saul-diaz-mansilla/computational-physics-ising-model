@@ -64,7 +64,6 @@ for n_side in L_val:
     C_N = []
     chi = []
     S_T = []
-    # with pd.HDFStore(r"C:\Users\Usuario\Documents\Documentos\Universidad\Computacion_Avanzada\Tema_7\data_" + str(n_side) + "_" + str(n_steps) + "_4.h5", mode='w') as store:
     for n in range(len(T_val)):
         T = T_val[n]
         # More steps closer to T=2.2
@@ -96,7 +95,7 @@ for n_side in L_val:
         S, _ = quad(lambda T: dSdT(T, T_c3, beta3, A), T_0, T)
         S_T.append(S)
 
-    filename = r"C:\Users\Usuario\Documents\Documentos\Universidad\Computacion_Avanzada\Tema_7\data_4\values_" + str(n_side) + ".csv"
+    filename = r"data_4\values_" + str(n_side) + ".csv"
     np.savetxt(filename, 
             np.column_stack((T_val, M_T, E_T, C_N, chi, S_T)),
             delimiter=',', 
@@ -104,7 +103,7 @@ for n_side in L_val:
             comments='',
             fmt='%.6f')
 
-filename = r"C:\Users\Usuario\Documents\Documentos\Universidad\Computacion_Avanzada\Tema_7\data_4\L_var.csv"
+filename = r"data_4\L_var.csv"
 np.savetxt(filename, 
            np.column_stack((L_val, C_max, chi_max)),
            delimiter=',', 
@@ -122,3 +121,4 @@ fig3.grid()
 
 plt.tight_layout()
 plt.show()
+
