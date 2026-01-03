@@ -35,7 +35,7 @@ def integrand(T):
     return np.interp(T, T_plot, dE_dT / T)  # Interpolate to get the value at T
 
 n_side = 20
-filename = r"C:\Users\Usuario\Documents\Documentos\Universidad\Computacion_Avanzada\Tema_7\data_4\values_" + str(n_side) + ".csv"
+filename = r"data_4\values_" + str(n_side) + ".csv"
 data = np.genfromtxt(filename, delimiter=',', skip_header=1)
 
 T_center = 2 / np.log(1 + np.sqrt(2))  # Critical temperature for the 2D Ising model
@@ -117,7 +117,7 @@ figure5 = plt.figure()
 fig5= figure5.add_subplot(111)
 
 for n_side in [10, 20, 30, 40]:
-    filename = r"C:\Users\Usuario\Documents\Documentos\Universidad\Computacion_Avanzada\Tema_7\data_2\values_" + str(n_side) + ".csv"
+    filename = r"data_2\values_" + str(n_side) + ".csv"
     data = np.genfromtxt(filename, delimiter=',', skip_header=1)
     T_val = data[:, 0]  # First column
     C_max = data[:, 3]  # Fourth column
@@ -148,4 +148,5 @@ fig6.legend()
 fig6.grid()
 
 plt.tight_layout()
+
 plt.show()
