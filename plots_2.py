@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-filename = r"C:\Users\Usuario\Documents\Documentos\Universidad\Computacion_Avanzada\Tema_7\data_4\L_var.csv"
+filename = r"data_4\L_var.csv"
 data = np.genfromtxt(filename, delimiter=',', skip_header=1)
 L_val = data[:, 0]
 C_max = data[:, 1]
@@ -36,5 +36,6 @@ fig4.set_xlabel(r"$\log(L)$")
 fig4.set_ylabel(r"$\log(\chi_{max}/N)$")
 fig4.legend()
 fig4.grid()
+
 
 plt.show()
