@@ -16,7 +16,7 @@ T_val = np.linspace(0.5, 3.5, n_T)
 
 M_T = []
 E_T = []
-with pd.HDFStore(r"C:\Users\Usuario\Documents\Documentos\Universidad\Computacion_Avanzada\Tema_7\data_" + str(n_side) + "_" + str(n_steps) + "_3.h5", mode='r') as store:
+with pd.HDFStore(r"data_" + str(n_side) + "_" + str(n_steps) + "_3.h5", mode='r') as store:
     for i in range(n_T):
         loaded_df = store[f"spins_{i}"]
         spins = loaded_df.values
@@ -39,4 +39,5 @@ fig1.set_ylabel(r"$E (J)$")
 fig1.grid()
 
 plt.tight_layout()
+
 plt.show()
