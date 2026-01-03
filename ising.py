@@ -99,7 +99,7 @@ for n in range(len(T_val)):
     C_N.append((np.mean(E_samples**2) - np.mean(E_samples)**2) / n_side**2 / T**2)
     chi.append((np.mean(M_samples**2) - np.mean(M_samples)**2) / n_side**2 / T)
 
-filename = r"C:\Users\Usuario\Documents\Documentos\Universidad\Computacion_Avanzada\Tema_7\data\values_" + str(n_side) + "_3.csv"
+filename = r"data\values_" + str(n_side) + "_3.csv"
 np.savetxt(filename, 
            np.column_stack((T_val, M_T, E_T, C_N, chi)),
            delimiter=',', 
@@ -166,3 +166,4 @@ fig5.grid()
 
 plt.tight_layout()
 plt.show()
+
