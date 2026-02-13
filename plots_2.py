@@ -1,16 +1,17 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-
+# Load data containing maximum values of C and chi for different lattice sizes L
 filename = r"data_4\L_var.csv"
 data = np.genfromtxt(filename, delimiter=',', skip_header=1)
-L_val = data[:, 0]
-C_max = data[:, 1]
-chi_max = data[:, 2]
+L_val = data[:, 0] # Lattice sizes
+C_max = data[:, 1] # Maximum Specific Heat
+chi_max = data[:, 2] # Maximum Susceptibility
 
 # L_val = np.arange(5, 41, 1)
 # chi_max = chi_max * L_val**2
 
+# Finite Size Scaling for Specific Heat: C_max ~ c0 + c1 * log(L) (for 2D Ising alpha=0)
 m,n = np.polyfit(np.log(L_val), C_max, 1)
 print(m,n)
 
@@ -24,6 +25,7 @@ fig3.set_ylabel(r"$C$")
 fig3.legend()
 fig3.grid()
 
+# Finite Size Scaling for Susceptibility: chi_max ~ L^(gamma/nu) -> log(chi_max) ~ (gamma/nu) * log(L)
 m2, n2 = np.polyfit(np.log(L_val), np.log(chi_max), 1)
 print(m2,n2)
 
