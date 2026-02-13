@@ -1,5 +1,7 @@
 # computational-physics-ising-model
-A brief work that covers the basics of the Ising model: magnetization and specific heat, phase transitions, as part of a computational physics course in Spanish.
+A brief work that covers the basics of the Ising model: Metropolis algorithm to obtain the magnetization and other macroscopic variables such as energy, specific heat and susceptibility. Finite scaling effects also studied. Part of a computational physics course in Spanish.
+
+Read final report in "CA__Práctica_Tema_7.pdf".
 
 Folders:
 - "data_i": data stored from the simulations.
